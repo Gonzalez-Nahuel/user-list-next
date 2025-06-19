@@ -5,6 +5,12 @@
   --foreground: #171717;
 }
 
+@layer utilities {
+  .shadow-custom {
+    box-shadow: 0.5px 0.5px 10px #014d63, -0.5px -0.5px 10px #014d63;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
