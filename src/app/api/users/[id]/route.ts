@@ -2,14 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { UserData } from "@/types/user-data";
 import users from "@/db.json";
 
-export async function GET(
-  req: NextRequest
-  /*{
-    params,
-  }: {
-    params: { id: string };
-  }*/
-): Promise<Response> {
+export async function GET(req: NextRequest): Promise<Response> {
   const url = new URL(req.url);
   const id = url.pathname.split("/").pop();
 
