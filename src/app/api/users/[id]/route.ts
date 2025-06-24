@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import { promises as fs } from "fs";
 import { UserData } from "@/types/user-data";
+import users from "@/db.json";
 
 export async function GET(
   req: Request,
@@ -11,12 +10,10 @@ export async function GET(
     params: { id: string };
   }
 ): Promise<Response> {
-  const filePath = path.join(process.cwd(), "src", "db.json");
-
   try {
-    const fileData = await fs.readFile(filePath, "utf-8");
-    const data: UserData[] = JSON.parse(fileData);
-    const user = data.find((u: UserData) => String(u.id) === String(params.id));
+    const user = (users as UserData[]).find(
+      (u: UserData) => String(u.id) === String(params.id)
+    );
 
     if (!user) {
       return NextResponse.json(
