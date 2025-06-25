@@ -1,7 +1,11 @@
 import { UserCard } from "@/components/UserCard";
 
-export default function Page({ params }: { params: { id: string } }) {
-  //const { id } = params;
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-  return <UserCard id={params.id} />;
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
+
+  return <UserCard id={id} />;
 }
