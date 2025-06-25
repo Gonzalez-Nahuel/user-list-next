@@ -60,6 +60,7 @@ export function UserCard({ id }: { id: string }) {
               alt={data.name.first}
               width={50}
               height={50}
+              unoptimized
             />
             <div>
               <p className="font-bold text-2xl">

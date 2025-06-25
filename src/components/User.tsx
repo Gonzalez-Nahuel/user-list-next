@@ -26,6 +26,7 @@ export const User = ({ data }: UserDetailsProps) => {
         alt={data.name}
         width={50}
         height={50}
+        unoptimized
       />
       <div className="text-start">
         <p className="font-extrabold">{data.name}</p>
