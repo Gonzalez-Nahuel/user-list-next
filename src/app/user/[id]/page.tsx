@@ -7,7 +7,7 @@ interface PageProps {
 }
 
 export default function Page({ params }: PageProps) {
-  const { id } = params;
+  //const { id } = params;
 
-  return <UserCard id={id} />;
+  return <UserCard id={params.id} />;
 }
