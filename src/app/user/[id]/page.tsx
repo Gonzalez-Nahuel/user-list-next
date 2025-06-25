@@ -1,12 +1,6 @@
 import { UserCard } from "@/components/UserCard";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: { params: { id: string } }) {
   //const { id } = params;
 
   return <UserCard id={params.id} />;
